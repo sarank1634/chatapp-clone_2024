@@ -1,22 +1,22 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// const connectDB = async () => {
-//     try {
-//         await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/chatapp');
-//         console.log("MongoDB connected");
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGODB_URL);
+        console.log("MongoDB connected");
 
-//         const connection = mongoose.connection;
+        const connection = mongoose.connection;
 
-//         connection.on('connected',() => {
-//             console.log('MongoDB connected');
-//         });
+        connection.on('connected',() => {
+            console.log('MongoDB connected');
+        });
 
-//         connection.on('error', (err) => {
-//             console.log('Something is wrong in db', err);
-//         });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-// module.exports = connectDB; 
+        connection.on('error', (err) => {
+            console.log('Something is wrong in db', err);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
+ 
+module.exports = connectDB; 
