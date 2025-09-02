@@ -1,15 +1,15 @@
-// const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 
-// const UserSchema = new mongoose.Schema({
-//     name: { type: String, required: true },
-//     email: { type: String, required: true, unique: true },
-//     password: { type: String, required: true },
-//     profile_pic: { type: String, default: "" },
+const UserSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    profile_pic: { type: String, default: "" },
 
-// },{
-//     timestamps: true,
-// });
+ },{
+    timestamps: true,
+ });
 
-// const UserModel = mongoose.model("User", UserSchema);
+const UserModel = mongoose.model("User", UserSchema);
 
-// module.exports = UserModel;
+module.exports = UserModel;
